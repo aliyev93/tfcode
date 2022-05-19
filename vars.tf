@@ -5,7 +5,7 @@ variable "aws_region" {
 }
 
 
-//Networking
+//Networkin
 variable "vpc_name" {
   description = "Name of VPC"
 }
