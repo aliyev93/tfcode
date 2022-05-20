@@ -13,3 +13,13 @@ variable "vpc_name" {
 variable "vpc_cidr" {
   description = "CIDR for VPC"
 }
+
+variable "private_subnets_cidr" {
+    type = list
+    description = "List of private subnet CIDR"
+}
+
+variable "availability_zones" {
+  type = list
+  description = "List of AZ"
+}
