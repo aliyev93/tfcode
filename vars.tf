@@ -18,8 +18,16 @@ variable "private_subnets_cidr" {
     type = list
     description = "List of private subnet CIDR"
 }
+variable "public_subnets_cidr" {
+    type = list
+    description = "List of public subnet CIDR"
+}
 
 variable "availability_zones" {
   type = list
   description = "List of AZ"
+}
+
+variable "ig_name" {
+  description = "Internet gateway name"
 }

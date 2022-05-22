@@ -6,3 +6,8 @@ variable "availability_zones" {
     type = list
   description = "List of AZ"
 }
+
+variable "vpc_id" {
+    type = string
+    description = "VPC ID"
+}

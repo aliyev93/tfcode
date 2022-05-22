@@ -6,10 +6,15 @@ module "assign_vpc" {
 }
 
 module "assign_pr_subnet" {
-  source               = "./module/network/subnet/private"
+  source               = "./modules/network/subnet/private"
   private_subnets_cidr = var.private_subnets_cidr
-  availability_zones = var.availability_zones
-  public_subnets_cidr = var.public_subnets_cidr
-  ig_name = var.ig_name
+  availability_zones   = var.availability_zones
+  vpc_id               = module.assign_vpc.vpc_id
 }
 
+module "assign_pb_subnet" {
+  source              = "./modules/network/subnet/public"
+  public_subnets_cidr = var.public_subnets_cidr
+  availability_zones  = var.availability_zones
+  vpc_id              = module.assign_vpc.vpc_id.id
+}
